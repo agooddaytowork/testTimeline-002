@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Timeline.qml</file>
+        <file>TimeLegend.qml</file>
+        <file>TimeLineScroll.qml</file>
+    </qresource>
+</RCC>
