@@ -9,6 +9,14 @@ Item {
     property int toMs: 60000
     property int  duration: 240000
 
+    CurrentTimeIndicator{
+        id: timeIndicator
+        height: root.height
+        x: 10
+        z:3
+
+    }
+
     Rectangle
     {
         id: timelineBG
@@ -32,30 +40,72 @@ Item {
             }
         }
 
-        TimeLineScroll{
-            id: testTimeLineScrol
-            width: root.width
-            height: root.height/3
-            y: root.height + 20
-            anchors.left: parent.left
-            fromMs: root.fromMs
-            toMs: root.toMs
-            duration: root.duration
 
 
-            onFromMsChanged: {
-                root.fromMs = fromMs
-            }
-            onToMsChanged: {
-                root.toMs = toMs
-            }
-        }
+
+
+//        Rectangle{
+
+//            id: indicator
+//            width: 2
+//            color: "red"
+//            height: root.height
+//            z:3
+//            x:10
+//            property bool  movable: false
+//            property int  initialX: 0
+
+//            MouseArea{
+//                anchors.fill: parent
+
+//                hoverEnabled: true
+
+//                onEntered: {
+//                    cursorShape = Qt.IBeamCursor
+//                }
+
+//                onExited: {
+//                    cursorShape = Qt.ArrowCursor
+
+//                }
+
+//                onPressed: {
+//                    indicator.movable = true
+//                    indicator.initialX = indicator.x
+//                }
+
+//                onClicked: {
+//                    indicator.movable = false
+//                }
+
+//                onMouseXChanged: {
+
+
+//                    if(indicator.movable)
+//                    {
+
+//                        if(mouseX > root.initialX)
+//                        {
+//                            indicator.x = indicator.x + Math.abs(mouseX - indicator.initialX)
+//                        }
+//                        else
+//                        {
+//                            indicator.x = indicator.x - Math.abs(mouseX - indicator.initialX)
+//                        }
+
+
+//                    }
+//                }
+
+//            }
+//        }
 
         MouseArea
         {
             id: timeLineMainMouseArea
             anchors.fill: parent
             property int  initialX: 0
+
 
             function zoomTimeLine(angleDelta)
             {

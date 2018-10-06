@@ -39,7 +39,6 @@ Item {
                     theSlider.x = root.fromMs * root.width/root.duration
                 }
 
-
             }
 
             MouseArea{

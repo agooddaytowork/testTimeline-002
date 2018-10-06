@@ -4,5 +4,6 @@
         <file>Timeline.qml</file>
         <file>TimeLegend.qml</file>
         <file>TimeLineScroll.qml</file>
+        <file>CurrentTimeIndicator.qml</file>
     </qresource>
 </RCC>
